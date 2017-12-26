@@ -5577,11 +5577,13 @@ static int fg_gen3_probe(struct platform_device *pdev)
 
 	fg_debugfs_create(fg);
 
+#ifdef CONFIG_DEBUG_FS
 	rc = sysfs_create_groups(&fg->dev->kobj, fg_groups);
 	if (rc < 0) {
 		pr_err("Failed to create sysfs files rc=%d\n", rc);
 		goto exit;
 	}
+#endif
 
 	rc = fg_get_battery_voltage(fg, &volt_uv);
 	if (!rc)
