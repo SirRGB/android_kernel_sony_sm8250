@@ -111,3 +111,8 @@ obj-$(CONFIG_ARCH_KONA) += console_setup.o
 obj-$(CONFIG_QTI_HW_KEY_MANAGER) += hwkm_qti.o
 hwkm_qti-y += hwkm.o
 obj-$(CONFIG_MSM_BAM_DMUX) += bam_dmux.o
+
+CFLAGS_rpm_stats.o += -DCONFIG_DEBUG_FS
+CFLAGS_rpm_master_stat.o += -DCONFIG_DEBUG_FS
+CFLAGS_rpm_rail_stats.o += -DCONFIG_DEBUG_FS
+CFLAGS_system_stats.o += -DCONFIG_DEBUG_FS
