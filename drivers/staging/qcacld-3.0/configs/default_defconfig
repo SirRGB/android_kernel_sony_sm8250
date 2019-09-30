@@ -492,9 +492,7 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 endif
 
 #Enable WLAN/Power debugfs feature only if debug_fs is enabled
-ifeq ($(CONFIG_DEBUG_FS), y)
-       # Flag to enable debugfs. Depends on CONFIG_DEBUG_FS in kernel
-       # configuration.
+ifeq ($(CONFIG_ANDROID), y)
        CONFIG_WLAN_DEBUGFS := y
 
        # Flag to enable streamfs. Depends on CONFIG_DEBUG_FS and
